@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('/avbank5.jpg');
+        }
+        #log h1{
+            font-size: 600;
+            font-weight: 600;
+            align-items: center;
+        }
+        .box {
+            border: 0px;
+            border-radius: 5px;
+            box-shadow: 10px;
+            background-color: rgba(255, 255, 255 );
+            padding: 20px;
+            margin: 3vh 25vw;
+            width: 350px;
+            height: 450px;
+            position: absolute;
+
+        }
+        #bt-signin{
+            width: 80px;
+            height: 40px;
+            border: 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="box">
+        <h1 id="log" align='center'>Sign up</h1>
+        <!-- <div class="box section"> -->
+            <p>Email</p>
+            <input type="email" id="eml" name="" placeholder="Enter your Email Address"><br><br>
+            <p>Password</p>
+            <input type="text" id="pwd1" name="" placeholder="Enter your Password"><br><br>
+            <p>Confirm Password</p>
+            <input type="text" id="pwd2" name="" placeholder="Confirm Password"><br><br>
+            
+        <button onclick="login()" style="background-color: blue;" id="bt-signin">Sign up</button>
+        <p>Already have an account? <a href="#">Log in</a></p>
+        <!-- </div> -->
+                
+    </section>
+    <script>
+        var record={};
+        function login(){
+            for(i=0; record[i] != eml.value; i++)
+            {
+                record+= eml.value;
+            }
+            
+                if(pwd1.value ==pwd2.value && eml.value)
+                {
+                    alert('Sign up Sucessful')
+                    record+= pwd1.value;
+                    record+= pwd2.value;
+                
+                }
+                else{
+                    alert('Password does not match')
+                    break;
+                
+                
+                }
+            
+            localStorage.setItem(login,record);
+        }
+    </script>
+</body>
+</html>
